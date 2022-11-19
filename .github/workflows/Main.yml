@@ -72,7 +72,7 @@ jobs:
       run: cd openwrt && ./scripts/feeds install -a
       
     - name: Import queue
-      run: cd openwrt && svn checkout https://github.com/openwrt/packages/trunk/libs/libnetfilter-queue package/libs/libnetfilter-queue
+      run: cd openwrt && rm -rf package/libs/libnetfilter-queue && cd package/libs/ && wget https://github.com/wanghurui/Actions-OpenwrtWrt-UA2F/releases/download/libnetfilter-queue/libnetfilter-queue.zip && unzip libnetfilter-queue.zip
     
     - name: Load custom configuration
       run: |
